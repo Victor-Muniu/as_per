@@ -15,6 +15,12 @@ const supplierRouter = require('./routes/accounts/supplierRoute')
 const lpoRouter = require('./routes/procurement/lpoRouter')
 const invoiceRouter = require('./routes/procurement/invoiceRouter')
 const creditorsRouter = require('./routes/accounts/creditorsRouter')
+const purchaseRouter = require('./routes/accounts/purchasesRouter')
+const tableRouter = require('./routes/service/tableRoute')
+const menuRouter = require('./routes/service/menuRouter')
+const bar_menuRouter = require('./routes/service/bar_menuRouter')
+const assign_tableRouter = require('./routes/service/assign_table')
+const kotRouter = require('./routes/service/kotRouter')
 const app = express();
 app.use(express.json());
 app.use(cors({
@@ -41,6 +47,12 @@ app.use('', supplierRouter)
 app.use('', lpoRouter)
 app.use('', invoiceRouter)
 app.use('', creditorsRouter)
+app.use('', purchaseRouter)
+app.use('', tableRouter)
+app.use('', menuRouter)
+app.use('', bar_menuRouter)
+app.use('', assign_tableRouter)
+app.use('', kotRouter)
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
