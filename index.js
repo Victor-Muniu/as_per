@@ -21,6 +21,8 @@ const menuRouter = require('./routes/service/menuRouter')
 const bar_menuRouter = require('./routes/service/bar_menuRouter')
 const assign_tableRouter = require('./routes/service/assign_table')
 const kotRouter = require('./routes/service/kotRouter')
+const assign_barRouter = require('./routes/service/bar_assign')
+const requisitionRouter = require('./routes/procurement/requisitionRouter')
 const app = express();
 app.use(express.json());
 app.use(cors({
@@ -53,6 +55,8 @@ app.use('', menuRouter)
 app.use('', bar_menuRouter)
 app.use('', assign_tableRouter)
 app.use('', kotRouter)
+app.use('', assign_barRouter)
+app.use('', requisitionRouter)
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
